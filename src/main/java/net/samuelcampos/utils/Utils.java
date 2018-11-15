@@ -14,7 +14,12 @@ public class Utils {
 
     @SneakyThrows
     public static void waitForEnter() {
-        System.out.println("(Press Enter)");
+        waitForEnter("(Press Enter)");
+    }
+
+    @SneakyThrows
+    public static void waitForEnter(String message) {
+        System.out.println(message);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         br.readLine();
     }

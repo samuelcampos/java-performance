@@ -17,7 +17,7 @@ public class DummyLogger {
                 random.nextInt()
         };
 
-        Utils.waitForEnter();
+        Utils.waitForEnter("(Start VisualVM, attach to this process and press Enter)");
 
         Utils.probeExecutionTime(() -> {
             for (int i = 0; i < 100_000_000; i++) {
