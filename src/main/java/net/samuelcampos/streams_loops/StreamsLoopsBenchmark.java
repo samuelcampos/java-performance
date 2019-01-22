@@ -14,8 +14,8 @@ import org.openjdk.jmh.annotations.*;
  */
 @State(Scope.Benchmark)
 @BenchmarkMode({Mode.Throughput})
-@Warmup(iterations = 0, time = 1, timeUnit = TimeUnit.SECONDS)
-@Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
+@Warmup(iterations = 2, time = 1, timeUnit = TimeUnit.SECONDS)
+@Measurement(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
 @Fork(1)
 public class StreamsLoopsBenchmark {
     private List<Integer> list = new ArrayList<>();

@@ -4,8 +4,12 @@ import net.samuelcampos.utils.Utils;
 import org.openjdk.jmh.annotations.*;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 @State(Scope.Benchmark)
+@Warmup(iterations = 0)
+@Measurement(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
+@Fork(1)
 public class ConcurrencyIssueBenchmark {
 
     ConfigManager configManager;
@@ -23,7 +27,7 @@ public class ConcurrencyIssueBenchmark {
     @GroupThreads(5)
     @Benchmark
     public Integer getDefaultConfig() {
-        return configManager.getConfig("default") + 1;
+        return configManager.getConfigPlusOne("default");
     }
 
     @Group("concurrencyIssue")

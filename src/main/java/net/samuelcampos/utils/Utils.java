@@ -51,7 +51,6 @@ public class Utils {
 //                .resultFormat(ResultFormatType.JSON)
 //                .result(clazz.getSimpleName() + ".json")
 ////                .addProfiler(StackProfiler.class)
-////                .addProfiler(GCProfiler.class)
 //                .addProfiler(CompilerProfiler.class)
 //                .jvmArgsAppend("-Djmh.stack.period=1")
 ////                .warmupIterations(5)

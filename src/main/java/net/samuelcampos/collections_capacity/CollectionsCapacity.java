@@ -18,7 +18,7 @@ public class CollectionsCapacity {
         Utils.waitForEnter("(Start VisualVM, attach to this process and press Enter)");
 
 //        List<Integer> reverseList = new ArrayList<>(objectList.size());
-        List<Object> reverseList = new ArrayList<>();
+        List<Integer> reverseList = new ArrayList<>();
 
         Utils.probeExecutionTime(() -> {
             for (int i = objectList.size() - 1; i >= 0; i--) {

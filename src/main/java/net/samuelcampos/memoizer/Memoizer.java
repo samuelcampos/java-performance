@@ -1,4 +1,4 @@
-package net.samuelcampos.utils;
+package net.samuelcampos.memoizer;
 
 import java.util.HashMap;
 import java.util.Map;

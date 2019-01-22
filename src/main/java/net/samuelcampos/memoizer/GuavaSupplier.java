@@ -15,17 +15,13 @@ public class GuavaSupplier {
 
     public static void main(String[] args) {
 
-
-        Long longWrapper = 2L;
-        System.out.println(longWrapper.equals(2));
-        System.out.println(longWrapper.equals(2L));
-
         Supplier<Integer> integerSupplier = Suppliers.memoize(GuavaSupplier::getExpensiveIO)::get;
+        // Check Suppliers.memoizeWithExpiration() method
 
         Utils.probeExecutionTime(() -> {
             for (int i = 0; i < 5; i++) {
-                int value = getExpensiveIO();
-//                int value = integerSupplier.get();
+//                int value = getExpensiveIO();
+                int value = integerSupplier.get();
 
                 System.out.println(i + ": " + value);
             }

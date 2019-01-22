@@ -1,6 +1,5 @@
 package net.samuelcampos.memoizer;
 
-import net.samuelcampos.utils.Memoizer;
 import net.samuelcampos.utils.Utils;
 import org.openjdk.jmh.annotations.*;
 

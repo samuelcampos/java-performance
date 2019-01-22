@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 @State(Scope.Benchmark)
 @BenchmarkMode({Mode.Throughput})
-@Warmup(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
+@Warmup(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
 @Fork(1)
 public class CollectionsBenchmark {
@@ -30,14 +30,14 @@ public class CollectionsBenchmark {
     @Benchmark
     public ArrayList<Integer> withoutInitialCapacity() {
         final ArrayList<Integer> destinationList = new ArrayList<>();
-        reverseList(new ArrayList<>());
+        reverseList(destinationList);
 
         return destinationList;
     }
 
     @Benchmark
     public ArrayList<Integer> withInitialCapacity() {
-        final ArrayList<Integer> destinationList = new ArrayList<>(size);
+        final ArrayList<Integer> destinationList = new ArrayList<>(originalList.size());
         reverseList(destinationList);
 
         return destinationList;

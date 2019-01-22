@@ -11,8 +11,8 @@ public class ConfigManager {
         configMap = Collections.synchronizedMap(new HashMap<>());
     }
 
-    public Integer getConfig(String configKey) {
-        return configMap.get(configKey);
+    public Integer getConfigPlusOne(String configKey) {
+        return configMap.get(configKey) + 1;
     }
 
     public Integer updateConfig(String configKey, Integer configValue) {

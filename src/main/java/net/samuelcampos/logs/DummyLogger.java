@@ -21,8 +21,8 @@ public class DummyLogger {
 
         Utils.probeExecutionTime(() -> {
             for (int i = 0; i < 100_000_000; i++) {
-//                log.debug("Line: " + i + " is not used? " + randomNumbers[i % randomNumbers.length]);
-                log.debug("Line: {} is not used? {}", i, randomNumbers[i % randomNumbers.length]);
+                log.debug("Line: " + i + " is not used? " + randomNumbers[i % randomNumbers.length]);
+//                log.debug("Line: {} is not used? {}", i, randomNumbers[i % randomNumbers.length]);
             }
         });
 

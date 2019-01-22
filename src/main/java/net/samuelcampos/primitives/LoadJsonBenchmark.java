@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @State(Scope.Benchmark)
 @BenchmarkMode({Mode.Throughput})
 @Warmup(iterations = 2)
-@Measurement(iterations = 5, time = 1)
+@Measurement(iterations = 3, time = 1)
 @Fork(1)
 public class LoadJsonBenchmark {
 
@@ -30,7 +30,7 @@ public class LoadJsonBenchmark {
     public LoadJsonBenchmark() {
         ClassLoader classLoader = getClass().getClassLoader();
 
-        // This JSON file has 15,9 MB
+        // This JSON file has ~ 16 MB
         try (BufferedReader br = new BufferedReader(new InputStreamReader(classLoader.getResourceAsStream("big.json")))) {
             jsonString = br.lines().collect(Collectors.joining(System.lineSeparator()));
         }
