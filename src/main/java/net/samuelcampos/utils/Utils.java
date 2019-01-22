@@ -33,4 +33,10 @@ public class Utils {
         System.out.println("Time took (ms): " + stopwatch.elapsed(TimeUnit.MILLISECONDS));
     }
 
+    public static void runBenchmark(Class<?> clazz) throws Exception {
+        String[] args = new String[]{
+                clazz.getSimpleName()
+        };
+        org.openjdk.jmh.Main.main(args);
+    }
 }

@@ -1,16 +1,26 @@
 package net.samuelcampos.memoizer;
 
-import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import lombok.SneakyThrows;
 import net.samuelcampos.utils.Utils;
 
+import java.util.function.Supplier;
+
+/**
+ * Guava's Suppliers usage example:
+ * https://google.github.io/guava/releases/27.0.1-jre/api/docs/com/google/common/base/Suppliers.html
+ */
 public class GuavaSupplier {
 
 
     public static void main(String[] args) {
 
-//        Supplier<Integer> integerSupplier = Suppliers.memoize(GuavaSupplier::getExpensiveIO);
+
+        Long longWrapper = 2L;
+        System.out.println(longWrapper.equals(2));
+        System.out.println(longWrapper.equals(2L));
+
+        Supplier<Integer> integerSupplier = Suppliers.memoize(GuavaSupplier::getExpensiveIO)::get;
 
         Utils.probeExecutionTime(() -> {
             for (int i = 0; i < 5; i++) {
