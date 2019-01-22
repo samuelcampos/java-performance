@@ -2,6 +2,12 @@ package net.samuelcampos.utils;
 
 import com.google.common.base.Stopwatch;
 import lombok.SneakyThrows;
+import org.openjdk.jmh.profile.CompilerProfiler;
+import org.openjdk.jmh.profile.GCProfiler;
+import org.openjdk.jmh.profile.StackProfiler;
+import org.openjdk.jmh.results.format.ResultFormatType;
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -38,5 +44,21 @@ public class Utils {
                 clazz.getSimpleName()
         };
         org.openjdk.jmh.Main.main(args);
+
+//        org.openjdk.jmh.runner.options.Options opt = new OptionsBuilder()
+//                .include(clazz.getSimpleName())
+////                .shouldDoGC(true)
+//                .resultFormat(ResultFormatType.JSON)
+//                .result(clazz.getSimpleName() + ".json")
+////                .addProfiler(StackProfiler.class)
+////                .addProfiler(GCProfiler.class)
+//                .addProfiler(CompilerProfiler.class)
+//                .jvmArgsAppend("-Djmh.stack.period=1")
+////                .warmupIterations(5)
+////                .measurementIterations(5)
+////                .forks(1)
+//                .build();
+//
+//        new Runner(opt).run();
     }
 }

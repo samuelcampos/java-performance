@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 @State(Scope.Benchmark)
-@BenchmarkMode({Mode.All})
+@BenchmarkMode({Mode.AverageTime})
 @Warmup(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
 @Fork(1)
