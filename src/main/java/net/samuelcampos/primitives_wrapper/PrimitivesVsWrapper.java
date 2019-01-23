@@ -1,4 +1,4 @@
-package net.samuelcampos.primitives;
+package net.samuelcampos.primitives_wrapper;
 
 import net.samuelcampos.utils.Utils;
 

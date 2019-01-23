@@ -1,4 +1,4 @@
-package net.samuelcampos.primitives;
+package net.samuelcampos.primitives_wrapper;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

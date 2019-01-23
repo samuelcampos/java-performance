@@ -30,21 +30,20 @@ public class StreamsLoopsBenchmark {
         }
     }
 
-    private int find(Stream<Integer> stream) {
-        return stream
+    @Benchmark
+    public int parallel_stream() {
+        return list.parallelStream()
                 .filter(i -> i == -1)
                 .findAny()
                 .orElse(0);
     }
 
     @Benchmark
-    public int parallel_stream() {
-        return find(list.parallelStream());
-    }
-
-    @Benchmark
     public int stream() {
-        return find(list.stream());
+        return list.stream()
+                .filter(i -> i == -1)
+                .findAny()
+                .orElse(0);
     }
 
     @Benchmark
