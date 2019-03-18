@@ -40,24 +40,24 @@ public class Utils {
     }
 
     public static void runBenchmark(Class<?> clazz) throws Exception {
-        String[] args = new String[]{
-                clazz.getSimpleName()
-        };
-        org.openjdk.jmh.Main.main(args);
+//        String[] args = new String[]{
+//                clazz.getSimpleName()
+//        };
+//        org.openjdk.jmh.Main.main(args);
 
-//        org.openjdk.jmh.runner.options.Options opt = new OptionsBuilder()
-//                .include(clazz.getSimpleName())
-////                .shouldDoGC(true)
-//                .resultFormat(ResultFormatType.JSON)
-//                .result(clazz.getSimpleName() + ".json")
-////                .addProfiler(StackProfiler.class)
-//                .addProfiler(CompilerProfiler.class)
-//                .jvmArgsAppend("-Djmh.stack.period=1")
-////                .warmupIterations(5)
-////                .measurementIterations(5)
-////                .forks(1)
-//                .build();
-//
-//        new Runner(opt).run();
+        org.openjdk.jmh.runner.options.Options opt = new OptionsBuilder()
+                .include(clazz.getSimpleName())
+//                .shouldDoGC(true)
+                .resultFormat(ResultFormatType.JSON)
+                .result("reports/" + clazz.getSimpleName() + ".json")
+//                .addProfiler(StackProfiler.class)
+                .addProfiler(CompilerProfiler.class)
+                .jvmArgsAppend("-Djmh.stack.period=1")
+//                .warmupIterations(5)
+//                .measurementIterations(5)
+//                .forks(1)
+                .build();
+
+        new Runner(opt).run();
     }
 }
