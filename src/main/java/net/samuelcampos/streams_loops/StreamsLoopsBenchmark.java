@@ -2,7 +2,6 @@ package net.samuelcampos.streams_loops;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Stream;
 
 import net.samuelcampos.utils.Utils;
 import org.openjdk.jmh.annotations.*;
@@ -50,6 +49,18 @@ public class StreamsLoopsBenchmark {
     public int loop() {
         for (Integer i : list) {
             if (i == -1) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    @Benchmark
+    public int loop_classical() {
+        int listSize = list.size();
+
+        for (int i = 0; i < listSize; i++) {
+            if (list.get(i) == -1) {
                 return i;
             }
         }

@@ -7,8 +7,9 @@ import java.math.BigInteger;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
+@BenchmarkMode({Mode.AverageTime}) // Sets the benchmark mode
+
 @State(Scope.Benchmark)
-@BenchmarkMode({Mode.AverageTime})
 @Warmup(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
 @Fork(1)
@@ -16,7 +17,7 @@ public class FactorialMemoizerBenchmark {
 
     Function<Integer, BigInteger> memoizedFactorial;
 
-    @Setup
+    @Setup  // Runs before the benchmark runs
     public void setup() {
         memoizedFactorial = Memoizer.memoize(FactorialMemoizerBenchmark::factorial, false);
     }

@@ -10,12 +10,14 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+
+@Warmup(iterations = 2, time = 1, timeUnit = TimeUnit.SECONDS)
+@Measurement(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
 
 @State(Scope.Benchmark)
 @BenchmarkMode({Mode.Throughput})
-@Warmup(iterations = 2)
-@Measurement(iterations = 3, time = 1)
 @Fork(1)
 public class LoadJsonBenchmark {
 
@@ -74,6 +76,29 @@ public class LoadJsonBenchmark {
     public static void main(String[] args) throws Exception {
         Utils.runBenchmark(LoadJsonBenchmark.class);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //    public static void main(String[] args) throws Exception {
 //        LoadJsonBenchmark benchmark = new LoadJsonBenchmark();
