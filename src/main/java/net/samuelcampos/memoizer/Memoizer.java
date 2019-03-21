@@ -5,6 +5,13 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 
+/**
+ * A class to build memoizer {@link Function functions} with a single input argument.
+ * This memoizer function will remember all the input arguments and respective results forever.
+ *
+ * @param <T> Input argument type.
+ * @param <U> Return type.
+ */
 public class Memoizer<T, U> {
 
     private final Map<T, U> cache;
