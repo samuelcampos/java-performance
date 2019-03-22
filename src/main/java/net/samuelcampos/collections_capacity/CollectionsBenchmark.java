@@ -30,7 +30,7 @@ public class CollectionsBenchmark {
     @Benchmark
     public ArrayList<Integer> withoutInitialCapacity() {
         final ArrayList<Integer> destinationList = new ArrayList<>();
-        reverseList(destinationList);
+        reverseListOrder(destinationList);
 
         return destinationList;
     }
@@ -38,12 +38,12 @@ public class CollectionsBenchmark {
     @Benchmark
     public ArrayList<Integer> withInitialCapacity() {
         final ArrayList<Integer> destinationList = new ArrayList<>(originalList.size());
-        reverseList(destinationList);
+        reverseListOrder(destinationList);
 
         return destinationList;
     }
 
-    private void reverseList(List<Integer> destinationList) {
+    private void reverseListOrder(List<Integer> destinationList) {
         for (int i = originalList.size() - 1; i >= 0; i--) {
             destinationList.add(originalList.get(i));
         }
