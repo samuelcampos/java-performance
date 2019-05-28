@@ -7,7 +7,7 @@ Set of small examples to test and explain simple Java performance tips.
 * [JMH (Java Microbenchmark Harness)][JmhURL] is a tool for building and running Java benchmarks
 
 
-## Presentation @ PixelsCampPrimitivesWrappersBenchmark
+## Presentation @ PixelsCamp
 [![PixelsCamp presentation](https://img.youtube.com/vi/Fl9BxxjdkH0/0.jpg)](https://www.youtube.com/watch?v=Fl9BxxjdkH0)
 
 
