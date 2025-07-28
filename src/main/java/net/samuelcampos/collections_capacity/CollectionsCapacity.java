@@ -2,12 +2,13 @@ package net.samuelcampos.collections_capacity;
 
 import net.samuelcampos.utils.Utils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CollectionsCapacity {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int arraySize = 50_000_000;
 
         List<Integer> objectList = new ArrayList<>(arraySize);

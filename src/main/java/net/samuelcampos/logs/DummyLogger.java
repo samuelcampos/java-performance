@@ -3,13 +3,14 @@ package net.samuelcampos.logs;
 import lombok.extern.slf4j.Slf4j;
 import net.samuelcampos.utils.Utils;
 
+import java.io.IOException;
 import java.util.Random;
 
 @Slf4j
 public class DummyLogger {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Random random = new Random();
         int[] randomNumbers = new int[] {
                 random.nextInt(),

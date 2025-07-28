@@ -1,9 +1,9 @@
 package net.samuelcampos.memoizer;
 
 import com.google.common.base.Suppliers;
-import lombok.SneakyThrows;
 import net.samuelcampos.utils.Utils;
 
+import java.io.IOException;
 import java.util.function.Supplier;
 
 /**
@@ -13,9 +13,15 @@ import java.util.function.Supplier;
 public class GuavaSupplier {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Supplier<Integer> integerSupplier = Suppliers.memoize(GuavaSupplier::getExpensiveIO)::get;
+        Supplier<Integer> integerSupplier = Suppliers.memoize(() -> {
+            try {
+                return getExpensiveIO();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
         // Check Suppliers.memoizeWithExpiration() method
 
         Utils.probeExecutionTime(() -> {
@@ -31,8 +37,7 @@ public class GuavaSupplier {
     }
 
 
-    @SneakyThrows
-    private static int getExpensiveIO() {
+    private static int getExpensiveIO() throws InterruptedException {
         Thread.sleep(2000);
         return 100;
     }
